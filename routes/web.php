@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Models\Post;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +16,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return 
+    view(
+        'posts', 
+        [
+            'heading' => 'latest posts',
+            'posts' => Post::all()
+        ]
+    );
 });
+
+Route::get('/post/{post}', function(post $post) {
+    return view('post', [
+        'post' => $post
+    ]);
+});
+
+
