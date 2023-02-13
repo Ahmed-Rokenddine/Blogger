@@ -1,8 +1,9 @@
 <?php
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Models\Post;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,21 +16,10 @@ use App\Models\Post;
 |
 */
 
-Route::get('/', function () {
-    return 
-    view(
-        'posts', 
-        [
-            'heading' => 'latest posts',
-            'posts' => Post::all()
-        ]
-    );
+Route::get('/', [PostController::class, 'index']);
+Route::get('/about', function(){
+    return view('about');
 });
-
-Route::get('/post/{post}', function(post $post) {
-    return view('post', [
-        'post' => $post
-    ]);
-});
+Route::get('/post/{post}', [PostController::class, 'show']);
 
 
