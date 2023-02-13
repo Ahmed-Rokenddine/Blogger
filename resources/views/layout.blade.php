@@ -25,5 +25,6 @@
    
     {{-- VIEW OUTPUT  --}}
     @yield('content')
+    @yield('about')
 </body>
 </html>
