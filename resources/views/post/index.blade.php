@@ -12,7 +12,7 @@
             <p class="text-cyan-900 text-sm"><span style="font-weight: bold;" > تاريخ النشر : </span style="font-weight: bold;">{{ $post['created_at'] }}</p>
         </div>
         <div class="flex items-end" >
-            <button class="justify-self-end bg-cyan-900 w-full h-6 text-center text-cyan-50 cursor-pointer">read More</button>
+            <button class="justify-self-end bg-cyan-900 w-full h-6 text-center text-cyan-50 cursor-pointer">اقرء المزيد</button>
         </div>
     </div>
 @endforeach
